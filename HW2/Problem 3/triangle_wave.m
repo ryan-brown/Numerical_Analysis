@@ -1,5 +1,10 @@
 % Generate triangle wave using Fourier Series given N partial sums
 function triangle_wave(N)
+    % N must be odd, since only odd coefficients exist for Fourier Series
+    if mod(N, 2) == 0
+        N = N+1;
+    end
+    
     % Inital sum
     y = 0;
     
